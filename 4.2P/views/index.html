@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipe App</title>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+  <nav>
+    <div class="nav-wrapper recipe-nav">
+      <a href="#" class="brand-logo left logo-space">
+        <i class="material-icons">restaurant</i>
+      </a>
+      <ul class="right">
+        <li><a href="#">My Recipes</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container center-align">
+    <h3>Recipe App</h3>
+    <p class="flow-text">Recipe collection with MongoDB and Express.</p>
+
+    <img src="/images/banner.png" alt="Banner" class="hero-img responsive-img" />
+
+    <br><br>
+
+    <a class="btn modal-trigger click-me-button" href="#modal1">Add Recipe</a>
+
+    <br><br>
+
+    <div class="row" id="card-section"></div>
+  </div>
+
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Add Recipe</h4>
+
+      <form id="recipeForm">
+        <div class="input-field">
+          <input id="recipeName" type="text" required>
+          <label for="recipeName">Recipe Name</label>
+        </div>
+
+        <div class="input-field">
+          <input id="cuisineType" type="text" required>
+          <label for="cuisineType">Cuisine Type</label>
+        </div>
+
+        <div class="input-field">
+          <input id="cookingTime" type="text" required>
+          <label for="cookingTime">Cooking Time</label>
+        </div>
+
+        <div class="input-field">
+          <input id="difficulty" type="text" required>
+          <label for="difficulty">Difficulty</label>
+        </div>
+
+        <div class="input-field">
+          <input id="image" type="text" value="/images/banner.png" required>
+          <label for="image" class="active">Image Path</label>
+        </div>
+
+        <div class="input-field">
+          <textarea id="description" class="materialize-textarea" required></textarea>
+          <label for="description">Description</label>
+        </div>
+
+        <button class="btn click-me-button" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="/js/scripts.js"></script>
+</body>
+</html>
