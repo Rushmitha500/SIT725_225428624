@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #22354a;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+main {
+  padding: 20px;
+}
+
+#books-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.book-card {
+  background: white;
+  margin-bottom: 16px;
+  padding: 18px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.book-card h2 {
+  margin-top: 0;
+}
