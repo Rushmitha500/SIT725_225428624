@@ -1,0 +1,16 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #eef6ff;
+  padding-top: 80px;
+}
+
+h1 {
+  color: #004080;
+}
+
+#temperature {
+  font-size: 50px;
+  color: #0077cc;
+  font-weight: bold;
+}
