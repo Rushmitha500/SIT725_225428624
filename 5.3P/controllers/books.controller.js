@@ -1,35 +1,49 @@
-const booksService = require('../services/books.service');
+const booksService = require("../services/books.service");
 
-async function getAllBooks(req, res) {
+const getAllBooks = async (req, res) => {
   try {
     const books = await booksService.getAllBooks();
-    res.status(200).json(books);
-  } catch (error) {
-    res.status(500).json({ message: 'Error fetching books' });
-  }
-}
 
-async function getBookById(req, res) {
+    res.status(200).json({
+      statusCode: 200,
+      data: books,
+      message: "Books retrieved successfully"
+    });
+  } catch (error) {
+    res.status(500).json({
+      statusCode: 500,
+      message: "Error retrieving books",
+      error: error.message
+    });
+  }
+};
+
+const getBookById = async (req, res) => {
   try {
     const book = await booksService.getBookById(req.params.id);
 
     if (!book) {
-      return res.status(404).json({ message: 'Book not found' });
+      return res.status(404).json({
+        statusCode: 404,
+        message: "Book not found"
+      });
     }
 
-    res.status(200).json(book);
+    res.status(200).json({
+      statusCode: 200,
+      data: book,
+      message: "Book retrieved successfully"
+    });
   } catch (error) {
-    res.status(500).json({ message: 'Error fetching book' });
+    res.status(500).json({
+      statusCode: 500,
+      message: "Error retrieving book",
+      error: error.message
+    });
   }
-}
-
- function integrityCheck(req, res) {
-  console.log('integrity route hit');
-  res.status(204).send();
-}
+};
 
 module.exports = {
   getAllBooks,
-  getBookById,
-  integrityCheck
+  getBookById
 };

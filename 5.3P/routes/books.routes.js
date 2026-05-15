@@ -1,9 +1,14 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const booksController = require('../controllers/books.controller');
 
-router.get('/books', booksController.getAllBooks);
-router.get('/books/:id', booksController.getBookById);
-router.get('/integrity-check42', booksController.integrityCheck);
+const booksController = require("../controllers/books.controller");
+
+router.get("/api/books", booksController.getAllBooks);
+
+router.get("/api/books/:id", booksController.getBookById);
+
+router.get("/api/integrity-check42", (req, res) => {
+  res.status(204).send();
+});
 
 module.exports = router;
